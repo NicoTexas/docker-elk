@@ -105,7 +105,7 @@ $ nc localhost 5000 < /path/to/logfile.log
 ### License Upload
 
 ```
-curl -XPUT -u elastic 'http://devlogs.agileassets.com:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+curl -XPUT -u elastic 'http://devlogs.agileassets.com:9200/_xpack/license?acknowledge=true' -H "Content-Type: application/json" -d @license.json
 ```
 
 ### Default Kibana index pattern creation
