@@ -102,6 +102,12 @@ $ nc localhost 5000 < /path/to/logfile.log
 
 ## Initial setup
 
+### License Upload
+
+```
+curl -XPUT -u elastic 'http://devlogs.agileassets.com:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+```
+
 ### Default Kibana index pattern creation
 
 When Kibana launches for the first time, it is not configured with any index pattern.
