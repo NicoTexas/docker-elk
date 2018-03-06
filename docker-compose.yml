@@ -7,12 +7,11 @@ services:
       context: elasticsearch/
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - /opt/elasticsearch/data:/usr/share/elasticsearch/data
     ports:
       - "9200:9200"
       - "9300:9300"
     environment:
-      ES_JAVA_OPTS: "-Xmx5g -Xms2g"
+      ES_JAVA_OPTS: "-Xmx3g -Xms2g"
       ELASTIC_PASSWORD: changeme
     networks:
       - elk
@@ -28,7 +27,7 @@ services:
       - "5001:5001"
       - "4560:4560"
     environment:
-      LS_JAVA_OPTS: "-Xmx5g -Xms2g"
+      LS_JAVA_OPTS: "-Xmx3g -Xms2g"
     networks:
       - elk
     depends_on:
